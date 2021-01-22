@@ -15,6 +15,14 @@
 *.iws
 *.iml
 *.ipr
+/out/
+.idea_modules/
+modules.xml
+*.pb
+.idea/workspace.xml
+
+target
+build
 
 # Package Files #
 #*.jar
