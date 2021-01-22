@@ -1,0 +1,16 @@
+#spring:
+#  datasource:
+#    url: jdbc:postgresql://db:5432/world-db
+#    driverClassName: org.h2.Driver
+#    username: world
+#    password: world123
+#
+#  data:
+#    jpa:
+#      repositories:
+#        bootstrap-mode: default
+#
+#  jpa:
+#    database-platform: org.hibernate.dialect.postgres
+#    hibernate:
+#      ddl: update
