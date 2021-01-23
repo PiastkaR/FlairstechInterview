@@ -1,37 +1,45 @@
-# Compiled class file
-*.class
-
-# Log file
-*.log
-
-# BlueJ files
-*.ctxt
-
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
-
-### IntelliJ IDEA ###
-*.idea
-*.iws
+### Intellij ###
 *.iml
 *.ipr
+*.iws
+.idea/
+*.iws
 /out/
 .idea_modules/
 modules.xml
 *.pb
 .idea/workspace.xml
 
+#Jira Plugin
+atlassian-ide-plugin.xml
+
+#Sererauth dir
+/server/
+
+#JVM crash logs
+hs_err_pid*
+
 target
 build
+.gradle
 
-# Package Files #
-#*.jar
+# Package files #
+*.jar
 *.war
-*.nar
 *.ear
-*.zip
-*.tar.gz
-*.rar
 
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
+# Eclipse - Core
+.project
+
+#Eclipse
+.metadata
+bin/
+tmp/
+*.tmp
+*.bak
+*.swp
+*.~.nib
+local.properties
+.settings/
+.loadpah
+.recommenders
