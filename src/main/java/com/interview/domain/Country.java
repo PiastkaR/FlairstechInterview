@@ -17,7 +17,7 @@ public class Country {
 
     @Id
     @GeneratedValue
-    private char code;
+    private String code;
 
     @Column(name = "name", nullable = false)
     private String name;

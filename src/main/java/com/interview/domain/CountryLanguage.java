@@ -12,19 +12,9 @@ import java.util.Objects;
 @Setter
 @Entity
 @Table(name = "country_language")
-//@IdClass(CountryLanguagePK.class)
 public class CountryLanguage implements Serializable {
     @EmbeddedId
     private CountryLanguagePK countryLanguagePK;
-
-//    @Id
-//    @Column(name = "country_code", nullable = false)
-//    @JoinColumn(name = "code")
-//    private char countryCode;
-//
-//    @Id
-//    @Column(name = "language", nullable = false)
-//    private String language;
 
     @Column(name = "is_official", nullable = false)
     private boolean isOfficial;
@@ -34,11 +24,17 @@ public class CountryLanguage implements Serializable {
 
     @Embeddable
     @Data
-    public class CountryLanguagePK implements Serializable {
-        protected char countryCode;
+    public static class CountryLanguagePK implements Serializable {
+        @Column(name = "country_code", nullable = false)
+        protected String countryCode;
+        @Column(name = "language", nullable = false)
         protected String language;
 
-        public CountryLanguagePK(char countryCode, String language) {
+        public CountryLanguagePK() {
+
+        }
+
+        public CountryLanguagePK(String countryCode, String language) {
             this.countryCode = countryCode;
             this.language = language;
         }

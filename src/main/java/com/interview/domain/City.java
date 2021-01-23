@@ -20,7 +20,7 @@ public class City {
 
     @Column(name = "country_code", nullable = false)
     @JoinColumn(name = "code")
-    private char countryCode;
+    private String countryCode;
 
     @Column(name = "district", nullable = false)
     private String district;

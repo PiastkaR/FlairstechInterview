@@ -16,7 +16,7 @@ import java.util.Optional;
 @Slf4j
 public class CountryService {
 
-    private CountryRepository countryRepository;
+    private final CountryRepository countryRepository;
 
     public List<Country> getAllCities() {
         ArrayList<Country> countries = new ArrayList<>();
@@ -26,14 +26,14 @@ public class CountryService {
         return countries;
     }
 
-    public Country getCountryById(Character car) throws InvalidCountryCode {
-        log.info(String.format("Getting country by it's id: '%s'", car));
+    public Country getCountryByCode(String code) throws InvalidCountryCode {
+        log.info(String.format("Getting country by it's id: '%s'", code));
 
-        Optional<Country> optionalCountry = countryRepository.findById(car);
+        Optional<Country> optionalCountry = countryRepository.findByCode(code);
         if (optionalCountry.isPresent()) {
             return optionalCountry.get();
         } else {
-            throw new InvalidCountryCode(car.toString());
+            throw new InvalidCountryCode(code);
         }
     }
 
@@ -42,7 +42,7 @@ public class CountryService {
         countryRepository.save(country);
     }
 
-    public void delete(Character id) {
+    public void delete(String id) {
         log.info(String.format("Deleting city by it's id: '%s'", id));
         countryRepository.deleteById(id);
     }

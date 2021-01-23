@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping
 public class CountryCodeController {
 
-    private BusinessService businessService;
+    private final BusinessService businessService;
 
     @GetMapping("/{code}")
     public ResponseEntity<CountryDto> getCountryInfo(@PathVariable("code") String code) {

@@ -13,10 +13,10 @@ import org.springframework.stereotype.Service;
 @Slf4j
 public class BusinessService {
 
-    private CountryService countryService;
-    private CountryLanguageService countryLanguageService;
+    private final CountryService countryService;
+    private final CountryLanguageService countryLanguageService;
 
-    public CountryDto getCountryInfo(Character code) {
+    public CountryDto getCountryInfo(String code) {
         CountryDto countryDto = null;
         try {
             countryDto = fromCountry(code);
@@ -27,12 +27,12 @@ public class BusinessService {
         return countryDto;
     }
 
-    private CountryDto fromCountry(Character code) throws InvalidCountryCode {
-        Country country = countryService.getCountryById(code);
+    private CountryDto fromCountry(String code) throws InvalidCountryCode {
+        Country country = countryService.getCountryByCode(code);
         String countryContinent = country.getContinent();
         CountryDto.Continent continent = CountryDto.Continent.valueOf(countryContinent);
 
-        CountryLanguage countryLanguage = countryLanguageService.getCountryLanguageById(code);
+        CountryLanguage countryLanguage = countryLanguageService.getCountryLanguageByCountryCode(code);
         String language = countryLanguage.getCountryLanguagePK().getLanguage();
 
         return CountryDto.builder()

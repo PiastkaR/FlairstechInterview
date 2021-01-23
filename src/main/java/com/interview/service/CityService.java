@@ -16,7 +16,7 @@ import java.util.Optional;
 @Slf4j
 public class CityService {
 
-    private CityRepository cityRepository;
+    private final CityRepository cityRepository;
 
     public List<City> getAllCities() {
         ArrayList<City> cities = new ArrayList<>();
