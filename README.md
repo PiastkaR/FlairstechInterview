@@ -1,12 +1,8 @@
-## Flaristech Interview Application 
+## Flairstech Interview Application 
 #####Please make suer you have built docker imamge and the project with command 'mvn clean install -Pdocker'
-Please go to folder src/main/docker and run app with: 'docker-compose up'.
-DB and app should run one after another on containers.
+Please go to folder src/main/docker and run app with: 'docker-compose up'.\
+Docker container is exposed on localhost port 8080.\
+DB and app should run one after another in containers.
 
-*Resulting endpoint is under http://localhost:8080/numberSource/id=1, GET
-
-See also PostgreSQL [Sample Databases](https://wiki.postgresql.org/wiki/Sample_Databases).
-Example Database for [PostgreSQL](https://www.postgresql.org/) : World DB\
-![GitHub tag](https://img.shields.io/github/tag/ghusta/docker-postgres-world-db.svg)
-[![Build Status](https://travis-ci.org/ghusta/docker-postgres-world-db.svg?branch=master)](https://travis-ci.org/ghusta/docker-postgres-world-db)
-[![Docker Pulls](https://img.shields.io/docker/pulls/ghusta/postgres-world-db.svg)](https://hub.docker.com/r/ghusta/postgres-world-db)
+*Resulting endpoint is under http://localhost:8080/numberSource/id=1, GET \
+*Application is also runnable via spring-boot. Before you run it in your IDE, please run 'docker run -d -p 5432:5432 ghusta/postgres-world-db:2.5', to run DB.  

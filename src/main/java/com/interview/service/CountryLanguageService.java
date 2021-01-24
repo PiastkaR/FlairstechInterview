@@ -29,8 +29,7 @@ public class CountryLanguageService {
     public CountryLanguage getCountryLanguageByCountryCode(String countryCode) throws InvalidCountryCode {
         log.info(String.format("Getting CountryLanguage by it's code: '%s'", countryCode));
 
-//        CountryLanguage.CountryLanguagePK countryLanguagePK = new CountryLanguage.CountryLanguagePK();
-        Optional<CountryLanguage> optionalCountryLanguage = countryLanguageRepository.findFirstByCountryLanguagePKCountryCode(countryCode);
+        Optional<CountryLanguage> optionalCountryLanguage = countryLanguageRepository.findFirstByCountryLanguagePKCountryCodeAndIsOfficialIsTrue(countryCode);
         if (optionalCountryLanguage.isPresent()) {
             CountryLanguage countryLanguage = optionalCountryLanguage.get();
             return isCountryLanguageOfficial(countryLanguage);

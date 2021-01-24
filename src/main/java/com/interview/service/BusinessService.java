@@ -16,15 +16,8 @@ public class BusinessService {
     private final CountryService countryService;
     private final CountryLanguageService countryLanguageService;
 
-    public CountryDto getCountryInfo(String code) {
-        CountryDto countryDto = null;
-        try {
-            countryDto = fromCountry(code);
-        } catch (InvalidCountryCode invalidCountryCode) {
-            invalidCountryCode.printStackTrace();
-        }
-
-        return countryDto;
+    public CountryDto getCountryInfo(String code) throws InvalidCountryCode {
+        return fromCountry(code);
     }
 
     private CountryDto fromCountry(String code) throws InvalidCountryCode {

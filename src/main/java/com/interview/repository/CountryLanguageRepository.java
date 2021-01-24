@@ -8,5 +8,5 @@ import java.util.Optional;
 
 @Repository
 public interface CountryLanguageRepository extends JpaRepository<CountryLanguage, String> {
-    Optional<CountryLanguage> findFirstByCountryLanguagePKCountryCode(String countryCode);
+    Optional<CountryLanguage> findFirstByCountryLanguagePKCountryCodeAndIsOfficialIsTrue(String countryCode);
 }
