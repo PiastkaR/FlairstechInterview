@@ -1,5 +1,5 @@
 ## Flairstech Interview Application 
-#####Please make suer you have built docker imamge and the project with command 'mvn clean install -Pdocker'
+Please make sure you have docker installed on your pc.\
 Please go to folder src/main/docker and run app with: 'docker-compose up'.\
 Docker container is exposed on localhost port 8080.\
 DB and app should run one after another in containers.
